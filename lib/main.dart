@@ -1,4 +1,5 @@
 import 'package:city_clinic_user/ui/screens/Login-Screen.dart';
+import 'package:city_clinic_user/ui/screens/MainScreen.dart';
 import 'package:city_clinic_user/ui/screens/Signup.dart';
 import 'package:city_clinic_user/ui/screens/Splash.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: LoginScreen(),
+      home: MainScreen(),
     );
   }
 }

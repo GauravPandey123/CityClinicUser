@@ -4,9 +4,6 @@ class Constants{
   static String appName = "CityClinicUserApp";
 
 
-
-
-
   //color file
   static String backgroundColor= "#313292";
 
