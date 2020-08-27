@@ -108,7 +108,6 @@ class _SignUpState extends State<SignUp> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             FlatButton(
-
                               onPressed: () {},
                               child: Text(
                                 'Google',

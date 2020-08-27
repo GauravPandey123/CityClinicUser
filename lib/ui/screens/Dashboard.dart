@@ -21,8 +21,10 @@ class _DashBoardScreenState extends State<Dashboard> {
             Container(
               height: 220,
               width: MediaQuery.of(context).size.width,
-              child: Image.asset("assets/images/city_clinic_image.png",
-                  fit: BoxFit.cover),
+              child: Image.asset(
+                "assets/images/city_clinic_image.png",
+                fit: BoxFit.fill,
+              ),
             ),
             SizedBox(height: 14),
             Text(
@@ -57,46 +59,69 @@ class _DashBoardScreenState extends State<Dashboard> {
             ),
             Column(
               children: <Widget>[
-
+                Container(
+                  height: 180,
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset("assets/images/offer_banner1.png",
+                      fit: BoxFit.fill),
+                ),
               ],
+            ),
+            Container(
+              child: Expanded(
+                child: ListView(
+                  children: [
+                    buildDepartmentList("Department", context),
+                  ],
+                ),
+              ),
             )
           ],
         ),
       ),
-      // child: Container(
-      //
-
-      // ),
-      //
-    )
-        // Padding(
-        //   padding: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
-        //   child: ListView(
-        //     children: [
-        //       SizedBox(height: 20.0),
-        //       buildDepartmentList(context),
-        //     ],
-        //   ),
-        // ),
-        );
+    ));
   }
 }
 
-buildDepartmentList(BuildContext context) {
-  return Container(
-    height: MediaQuery.of(context).size.height / 2.4,
-    width: MediaQuery.of(context).size.width,
-    child: ListView.builder(
-      primary: false,
-      shrinkWrap: true,
-      scrollDirection: Axis.horizontal,
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: EdgeInsets.only(right: 10.0),
-          child: DepartItem(),
-        );
-      },
-    ),
+buildDepartmentList(String departmenttext, BuildContext context) {
+  return Column(
+    children: <Widget>[
+      Container(
+        margin: EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              "$departmenttext",
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            FlatButton(
+                onPressed: null,
+                child: Text(
+                  "View All",
+                  style: TextStyle(color: blueTextColor, fontSize: 16.0),
+                ))
+          ],
+        ),
+      ),
+      // new Container(
+      //   child: Expanded(
+      //     child: ListView.builder(
+      //       primary: false,
+      //       shrinkWrap: true,
+      //       scrollDirection: Axis.horizontal,
+      //       itemCount: 10,
+      //       itemBuilder: (BuildContext context, int index) {
+      //         return Padding(
+      //             padding: EdgeInsets.only(right: 10.0), child: DepartItem());
+      //       },
+      //     ),
+      //   ),
+      //
+      // )
+    ],
   );
 }
