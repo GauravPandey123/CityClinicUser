@@ -1,4 +1,5 @@
 import 'package:city_clinic_user/utils/AppImages.dart';
+import 'package:city_clinic_user/utils/appcolors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:city_clinic_user/utils/AppRelatedText.dart';
@@ -24,7 +25,7 @@ class _SignUpState extends State<SignUp> {
             margin: EdgeInsets.all(10),
             child: Column(
               children: <Widget>[
-                SizedBox(height: 48),
+                SizedBox(height: 20),
                 ListTile(
                   contentPadding: EdgeInsets.all(0),
                   title: Text(
@@ -39,7 +40,6 @@ class _SignUpState extends State<SignUp> {
                     style: new TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ),
-                SizedBox(height: 20),
                 Form(
                   key: _formKey,
                   child: Container(
@@ -51,6 +51,7 @@ class _SignUpState extends State<SignUp> {
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(labelText: "Name"),
+
                         ),
                         SizedBox(
                           height: 10,
@@ -107,21 +108,59 @@ class _SignUpState extends State<SignUp> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            FlatButton(
-                              onPressed: () {},
+                            Container(
+                              margin: EdgeInsets.only(top: 14.0),
+                              padding: EdgeInsets.all(10.0),
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(width: 2, color: whiteColor),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20))),
                               child: Text(
                                 'Google',
                                 style: new TextStyle(
-                                    fontSize: 20, color: Colors.grey ),
+                                    fontSize: 20,
+                                    color: Colors.grey,
+                                    letterSpacing: 2),
                               ),
                             ),
-                            FlatButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Facebook',
-                                  style: new TextStyle(
-                                      fontSize: 20, color: Colors.grey),
-                                ))
+                            SizedBox(width: 20),
+                            Container(
+                              margin: EdgeInsets.only(top: 14.0),
+                              padding: EdgeInsets.all(10.0),
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(width: 2, color: whiteColor),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20))),
+                              child: Text(
+                                'Facebook',
+                                style: new TextStyle(
+                                    fontSize: 20, color: Colors.grey),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(top: 14.0),
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Already a Member?",
+                                style: new TextStyle(
+                                    fontSize: 16, color: Colors.grey),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 6.0),
+                              child: Text(
+                                "Sign In",
+                                style: new TextStyle(
+                                    fontSize: 16, color : redColor,fontWeight: FontWeight.bold ),
+                              ),
+                            ),
                           ],
                         )
 

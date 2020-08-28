@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:city_clinic_user/ui/screens/Signup.dart';
 import 'package:city_clinic_user/utils/AppImages.dart';
 import 'package:city_clinic_user/utils/Constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,9 +13,24 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 3),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) =>
+                SignUp()
+            )
+        )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width * 0.60;
+
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
@@ -48,11 +66,18 @@ class _SplashScreenState extends State<SplashScreen> {
                     )
                   ],
                 ),
+
               )
             ],
           ),
+
+
         ),
       ),
     );
   }
+
+
+
+
 }
