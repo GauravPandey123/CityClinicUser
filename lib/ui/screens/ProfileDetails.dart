@@ -1,5 +1,9 @@
+import 'package:city_clinic_user/ui/screens/ProfileDeatilsAbout.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'ProfileDetailFamilyMember.dart';
+import 'ProfileFamilyAddDetail.dart';
 
 class ProfileDetails extends StatefulWidget {
   @override
@@ -22,6 +26,7 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                tabs: [
                  Tab(
                    text: "About",
+
                  ),
                  Tab(
                    text: "Family Member",
@@ -30,27 +35,11 @@ class _ProfileDetailsState extends State<ProfileDetails> {
              ),
            ),
           body: TabBarView(
-
+              children: [ProfileDetailsAbout(),ProfileFamilyAddDetail()],
           ),
         ),
       ),
 
     );
-    // new MaterialApp(
-    //   bottom: TabBar(
-    //     labelColor: Colors.white,
-    //     tabs: [
-    //       Tab(
-    //         text: "UPCOMING",
-    //       ),
-    //       Tab(
-    //         text: "LIVE",
-    //       ),
-    //       Tab(
-    //         text: "COMPLETED",
-    //       ),
-    //     ],
-    //   ),
-    // )
   }
 }

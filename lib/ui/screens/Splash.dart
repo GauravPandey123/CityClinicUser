@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:city_clinic_user/ui/screens/Signup.dart';
 import 'package:city_clinic_user/utils/AppImages.dart';
 import 'package:city_clinic_user/utils/Constants.dart';
+import 'package:city_clinic_user/utils/appcolors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,7 +17,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3),
             ()=>Navigator.pushReplacement(context,
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: blueTextColor,
         body: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
