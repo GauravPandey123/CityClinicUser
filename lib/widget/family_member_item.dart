@@ -38,7 +38,7 @@ class _FamilyMemberState extends State<FamilyMemberItem> {
                 "Relation",
                 style: TextStyle(fontSize: 14.0, color: greyOneColor),
               ),
-
+              Image(image: SvgPicture.asset(assetName))
             ],
           ),
         ),
