@@ -26,7 +26,7 @@ class _HealthArticlesState extends State<HealthArticles> {
                 padding: EdgeInsets.all(8.0),
                 height: MediaQuery.of(context).size.height / 3.5,
                 width: MediaQuery.of(context).size.width,
-                child: SvgPicture.asset(twitter, fit: BoxFit.cover),
+
 
               )
             ],

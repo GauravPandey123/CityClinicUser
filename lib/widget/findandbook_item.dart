@@ -107,7 +107,6 @@ class _FindandBookState extends State<FindandBookItem> {
                                   Border.all(width: 2, color: blueTextColor),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20)),color: blueTextColor ), // make rounded corner of border),
-
                           child: Text(
                             "Book Appointment",
                             style:

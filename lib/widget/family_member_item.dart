@@ -17,28 +17,15 @@ class _FamilyMemberState extends State<FamilyMemberItem> {
       child: Container(
         child: Card(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           elevation: 3.0,
-          child: Column(
+          child: Row(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                    height: 50,
-                    width: 50,
-                    child: SvgPicture.asset(iconsProfile, fit: BoxFit.cover),
-                  )
-                ],
-              ),
-              Text(
-                "Member Name",
-                style: TextStyle(fontSize: 16.0, color: blackOneColor),
-                ),
-              Text(
-                "Relation",
-                style: TextStyle(fontSize: 14.0, color: greyOneColor),
-              ),
-              Image(image: SvgPicture.asset(assetName))
+              Container(
+                height: 50,
+                width: 50,
+                child: SvgPicture.asset(iconsProfile, fit: BoxFit.cover),
+              )
             ],
           ),
         ),

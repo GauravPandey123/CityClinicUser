@@ -15,6 +15,7 @@ class _DashBoardScreenState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
+            child: SingleChildScrollView(
       child: Container(
         child: Column(
           children: <Widget>[
@@ -67,61 +68,50 @@ class _DashBoardScreenState extends State<Dashboard> {
                 ),
               ],
             ),
-            Container(
-              child: Expanded(
-                child: ListView(
-                  children: [
-                    buildDepartmentList("Department", context),
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),
-    ));
+    )));
   }
 }
 
 buildDepartmentList(String departmenttext, BuildContext context) {
-  return Column(
-    children: <Widget>[
-      Container(
-        margin: EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text(
-              "$departmenttext",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.w800,
+  return Scaffold(
+    body: Column(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                "$departmenttext",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w800,
+                ),
               ),
-            ),
-            FlatButton(
-                onPressed: null,
-                child: Text(
-                  "View All",
-                  style: TextStyle(color: blueTextColor, fontSize: 16.0),
-                ))
-          ],
+              FlatButton(
+                  onPressed: null,
+                  child: Text(
+                    "View All",
+                    style: TextStyle(color: blueTextColor, fontSize: 16.0),
+                  ))
+            ],
+          ),
         ),
-      ),
-      // new Container(
-      //   child: Expanded(
-      //     child: ListView.builder(
-      //       primary: false,
-      //       shrinkWrap: true,
-      //       scrollDirection: Axis.horizontal,
-      //       itemCount: 10,
-      //       itemBuilder: (BuildContext context, int index) {
-      //         return Padding(
-      //             padding: EdgeInsets.only(right: 10.0), child: DepartItem());
-      //       },
-      //     ),
-      //   ),
-      //
-      // )
-    ],
+        new ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          primary: false,
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+                padding: EdgeInsets.only(right: 10.0), child: DepartItem());
+          },
+        ),
+      ],
+    ),
   );
 }

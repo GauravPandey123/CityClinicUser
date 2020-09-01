@@ -1,9 +1,12 @@
+import 'package:city_clinic_user/ui/screens/BottomTabsScreen.dart';
+import 'package:city_clinic_user/ui/screens/Dashboard.dart';
 import 'package:city_clinic_user/ui/screens/Login-Screen.dart';
 import 'package:city_clinic_user/ui/screens/MainScreen.dart';
 import 'package:city_clinic_user/ui/screens/ProfileDetails.dart';
 import 'package:city_clinic_user/ui/screens/Signup.dart';
 import 'package:city_clinic_user/ui/screens/Splash.dart';
 import 'package:city_clinic_user/widget/findandbook_item.dart';
+import 'package:city_clinic_user/widget/health_articles_item.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: ProfileDetails(),
+      home: BottomTabsScreen()
     );
   }
 }
