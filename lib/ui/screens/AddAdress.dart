@@ -9,7 +9,8 @@ class AddAddress extends StatefulWidget {
 }
 
 class _AddAddressState extends State<AddAddress> {
-  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+  final Geolocator geolocator = Geolocator()
+    ..forceAndroidLocationManager;
   Position _currentPosition;
   String _currentAddress;
   String streetAddress;
@@ -19,6 +20,13 @@ class _AddAddressState extends State<AddAddress> {
   String state;
   String pincode;
 
+  final TextEditingController _stateController = TextEditingController();
+  final TextEditingController _localController = TextEditingController();
+  final TextEditingController _localityController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _cityController = TextEditingController();
+  final TextEditingController _pinCodeController = TextEditingController();
+
   final GlobalKey<FormState> _formKey = GlobalKey();
   GlobalKey<ScaffoldState> _globalKey = GlobalKey();
 
@@ -26,137 +34,134 @@ class _AddAddressState extends State<AddAddress> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.all(10.0),
-          child: Column(
-            children: <Widget>[
-              FlatButton(
-                height: 50,
-                minWidth: double.infinity,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: redColor,
-                child: Text(
-                  "Use Current Location",
-                  style: new TextStyle(fontSize: 16.0, color: Colors.white),
-                ),
-                onPressed: () {
-                  _getCurrentLocation();
-                },
-              ),
-              Column(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
                 children: <Widget>[
-                  Form(
-                    key: _formKey,
-                    child: Container(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(labelText: "Full Name"),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-
-                            decoration: InputDecoration(labelText: "Street"),
-
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(labelText: "Locality"),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "Other address information",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "Other address information",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "City",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "State",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.text,
-                            decoration: InputDecoration(
-                              labelText: "Pincode",
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          FlatButton(
-                            height: 50,
-                            minWidth: double.infinity,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            color: blueTextColor,
-                            onPressed: () {},
-                            child: Text(
-                              "Add Address",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
+                  FlatButton(
+                    height: 50,
+                    minWidth: double.infinity,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    color: redColor,
+                    child: Text(
+                      "Use Current Location",
+                      style: new TextStyle(fontSize: 16.0, color: Colors.white),
                     ),
+                    onPressed: () {
+                      _getCurrentLocation();
+                    },
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Form(
+                        key: _formKey,
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                    labelText: "Full Name"),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                  cursorColor: Colors.black,
+                                  keyboardType: TextInputType.text,
+
+                                  decoration: InputDecoration(
+                                      labelText: "Street"),
+
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                    labelText: "Locality"),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  labelText: "Other address information",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  labelText: "City",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  labelText: "State",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                decoration: InputDecoration(
+                                  labelText: "Pincode",
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              FlatButton(
+                                height: 50,
+                                minWidth: double.infinity,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                color: blueTextColor,
+                                onPressed: () {},
+                                child: Text(
+                                  "Add Address",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
-              )
-            ],
+              ),
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 
   void _getCurrentLocation() {
-    final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+    final Geolocator geolocator = Geolocator()
+      ..forceAndroidLocationManager;
 
     geolocator
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
@@ -186,9 +191,7 @@ class _AddAddressState extends State<AddAddress> {
       print(e);
     }
   }
-  }
-
-
+}
 
 
 // void _getCurrentLocation() {
