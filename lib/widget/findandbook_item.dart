@@ -16,7 +16,6 @@ class _FindandBookState extends State<FindandBookItem> {
     return Padding(
       padding: EdgeInsets.all(10.0),
       child: Container(
-        height: 400,
         width: MediaQuery.of(context).size.width,
         child: Card(
           shape:

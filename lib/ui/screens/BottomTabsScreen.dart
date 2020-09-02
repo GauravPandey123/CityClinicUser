@@ -10,6 +10,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'User_Profiles.dart';
+
 class BottomTabsScreen extends StatefulWidget {
   _BottomTabsScreen createState() => _BottomTabsScreen();
 }
@@ -30,16 +32,16 @@ class _BottomTabsScreen extends State<BottomTabsScreen> {
         'title': 'Orders',
       },
       {
-        'page': Search(),
-        'title': 'Search',
-      },
-      {
         'page': Cart(),
         'title': 'Cart',
       },
       {
-        'page': Profile(),
-        'title': 'Cart',
+        'page': Search(),
+        'title': 'Search',
+      },
+      {
+        'page': UserProfiles(),
+        'title': 'Profile',
       },
     ];
     super.initState();

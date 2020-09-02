@@ -16,9 +16,7 @@ class _MyOrderItemState extends State<MyOrderItem> {
     return Padding(
       padding: EdgeInsets.all(10),
       child: SafeArea(
-
-
-          child: Container(
+        child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: blackOneColor),
