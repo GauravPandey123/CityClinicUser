@@ -14,4 +14,10 @@ const String profile1Image = "assets/images/Account.svg";
 const String editProfileImage = "assets/images/edit_profile_image.svg";
 const String forwardImage = "assets/images/arrow.svg";
 const String closeImage = "assets/images/close.svg";
+const String wishListImage = "assets/images/Wishlist.svg";
+const String paymentImage = "assets/images/credit-card.svg";
+const String debitCardImage = "assets/images/debit-card.svg";
+const String money = "assets/images/money.svg";
+const String paypal = "assets/images/paypal.svg";
+const String del = "assets/images/del.svg";
 

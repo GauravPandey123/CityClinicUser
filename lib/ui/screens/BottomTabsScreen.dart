@@ -5,11 +5,13 @@ import 'package:city_clinic_user/ui/screens/Profile.dart';
 import 'package:city_clinic_user/ui/screens/Search.dart';
 import 'package:city_clinic_user/utils/AppImages.dart';
 import 'package:city_clinic_user/utils/appcolors.dart';
+import 'package:city_clinic_user/widget/Address_Shiping_Item.dart';
+import 'package:city_clinic_user/widget/OrderDeatilsItem.dart';
 import 'package:city_clinic_user/widget/maindrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'PaymentMethodScreen.dart';
 import 'User_Profiles.dart';
 
 class BottomTabsScreen extends StatefulWidget {
@@ -32,7 +34,7 @@ class _BottomTabsScreen extends State<BottomTabsScreen> {
         'title': 'Orders',
       },
       {
-        'page': Cart(),
+        'page': PaymentMethodScreen(),
         'title': 'Cart',
       },
       {
