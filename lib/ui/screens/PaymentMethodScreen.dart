@@ -1,5 +1,7 @@
+import 'package:city_clinic_user/ui/screens/AddAdress.dart';
 import 'package:city_clinic_user/utils/AppImages.dart';
 import 'package:city_clinic_user/utils/appcolors.dart';
+import 'package:city_clinic_user/widget/Address_Shiping_Item.dart';
 import 'package:city_clinic_user/widget/card_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -145,7 +147,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Debit Card",
+                        "Card",
                         style:
                             new TextStyle(fontSize: 16.0, color: blueTextColor),
                       ),
@@ -163,8 +165,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Row(
 
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
@@ -179,7 +181,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             style: new TextStyle(
                                 fontSize: 16.0, color: blueTextColor),
                           ),
-                          onPressed: null,
+                          onPressed: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => AddAddress()));
+                          },
                           borderSide: BorderSide(color: blueTextColor),
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30.0)))
@@ -192,7 +198,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   ),
                   SizedBox(height: 10),
                   Container(
-
                     padding: EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                         border: Border.all(width: 1, color: dividerColor)),
@@ -264,20 +269,20 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
 
                       ],
                     ),
-
                   ),
+                  SizedBox(height: 10),
                   FlatButton(
-                      onPressed: null,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                          side: BorderSide(color: blueTextColor)),
-                      child: Text(
-                        "Next",
-                        style: new TextStyle(
-                            fontSize: 16.0,
-                            color: blackOneColor
-                        ),
-                      )),
+                    height: 50,
+                    minWidth: double.infinity,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    color: blueTextColor,
+                    onPressed: () {},
+                    child: Text(
+                      "Next",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -289,8 +294,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
 }
 
 buildCardDataItem(BuildContext context) {
-  return Container(
-    child: ListView.builder(
+   ListView.builder(
       primary: false,
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
@@ -298,6 +302,21 @@ buildCardDataItem(BuildContext context) {
       itemBuilder: (BuildContext context, int index) {
         return CardItem();
       },
-    ),
+
   );
 }
+
+
+buildShipDataItem(BuildContext context) {
+  ListView.builder(
+      primary: false,
+      shrinkWrap: true,
+      scrollDirection: Axis.horizontal,
+      itemCount: 10,
+      itemBuilder: (BuildContext context, int index) {
+        return AddressShippingItem();
+      },
+
+  );
+}
+

@@ -20,4 +20,9 @@ const String debitCardImage = "assets/images/debit-card.svg";
 const String money = "assets/images/money.svg";
 const String paypal = "assets/images/paypal.svg";
 const String del = "assets/images/del.svg";
+const String meetadoctor = "assets/images/meetadoctor.png";
+const String labtest = "assets/images/labtest.png";
+const String consultOnline = "assets/images/cosult_online.png";
+const String pharmacy = "assets/images/pharmacy.png";
+const String labSvg = "assets/images/lab.svg";
 

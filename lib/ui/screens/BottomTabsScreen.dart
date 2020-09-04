@@ -1,5 +1,6 @@
 import 'package:city_clinic_user/ui/screens/Cart.dart';
 import 'package:city_clinic_user/ui/screens/Dashboard.dart';
+import 'package:city_clinic_user/ui/screens/LabCategoryScreen.dart';
 import 'package:city_clinic_user/ui/screens/Orders.dart';
 import 'package:city_clinic_user/ui/screens/Profile.dart';
 import 'package:city_clinic_user/ui/screens/Search.dart';
@@ -26,7 +27,7 @@ class _BottomTabsScreen extends State<BottomTabsScreen> {
   void initState() {
     _pages = [
       {
-        'page': Dashboard(),
+        'page': LabCategoryScreen(),
         'title': 'DashBoard',
       },
       {
