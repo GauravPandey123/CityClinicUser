@@ -81,65 +81,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                         SizedBox(
-                          height: 30,
-                        ),
-                        FlatButton(
-                          height: 50,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30)),
-                          color: Colors.blue,
-                          onPressed: () {},
-                          child: Text(
-                            "SignUp",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          AppRelatedText.orsignupwith,
-                          textAlign: TextAlign.center,
-                          style: new TextStyle(
-                            fontSize: 16,
-                            color: (Colors.grey),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(top: 14.0),
-                              padding: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: whiteColor),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20))),
-                              child: Text(
-                                'Google',
-                                style: new TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.grey,
-                                    letterSpacing: 2),
-                              ),
-                            ),
-                            SizedBox(width: 20),
-                            Container(
-                              margin: EdgeInsets.only(top: 14.0),
-                              padding: EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 2, color: whiteColor),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20))),
-                              child: Text(
-                                'Facebook',
-                                style: new TextStyle(
-                                    fontSize: 20, color: Colors.grey),
-                              ),
-                            ),
-                          ],
+                          height: 20,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -162,8 +104,21 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ],
-                        )
-
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        FlatButton(
+                          height: 50,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30)),
+                          color: blueTextColor,
+                          onPressed: () {},
+                          child: Text(
+                            "SignUp",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
 //                        Expanded(
 //                            child: Align(
 //                              alignment: Alignment.bottomCenter,

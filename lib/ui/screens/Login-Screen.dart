@@ -1,4 +1,7 @@
+import 'package:city_clinic_user/ui/screens/ForgotPasswordDialog.dart';
+import 'package:city_clinic_user/ui/screens/OtpScreenDialog.dart';
 import 'package:city_clinic_user/utils/AppRelatedText.dart';
+import 'package:city_clinic_user/utils/appcolors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +51,7 @@ class _LoginScreen extends State<LoginScreen> {
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.phone,
                           decoration:
-                          InputDecoration(labelText: "Mobile Number"),
+                              InputDecoration(labelText: "Mobile Number"),
                         ),
                         SizedBox(
                           height: 10,
@@ -61,50 +64,47 @@ class _LoginScreen extends State<LoginScreen> {
                           ),
                         ),
                         SizedBox(
+                          height: 10,
+                        ),
+                        FlatButton(
+                          height: 50,
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Dialog(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(20.0)), //this right here
+                                      child: ForgotPasswordDialog()
+                                  );
+                                });
+                          },
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              "Forgot Passowrd",
+                              style: TextStyle(color: greyOneColor,fontSize: 16.0),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
                           height: 30,
                         ),
                         FlatButton(
                           height: 50,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30)),
-                          color: Colors.blue,
-                          onPressed: () {},
+                          color: blueTextColor,
+                          onPressed: () {
+
+                          },
                           child: Text(
                             "SignIn",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
-                        SizedBox(
-                          height: 80,
-                        ),
-                        Text(
-                          AppRelatedText.orsignupwith,
-                          textAlign: TextAlign.center,
-                          style: new TextStyle(
-                            fontSize: 16,
-                            color: (Colors.grey),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            FlatButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Google',
-                                style: new TextStyle(
-                                    fontSize: 20, color: Colors.grey ),
-                              ),
-                            ),
-                            FlatButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Facebook',
-                                  style: new TextStyle(
-                                      fontSize: 20, color: Colors.grey),
-                                ))
-                          ],
-                        )
+
 
 //                        Expanded(
 //                            child: Align(
@@ -132,7 +132,6 @@ class _LoginScreen extends State<LoginScreen> {
                     ),
                   ),
                 )
-
               ],
             ),
           ),

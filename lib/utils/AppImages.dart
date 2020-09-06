@@ -25,4 +25,5 @@ const String labtest = "assets/images/labtest.png";
 const String consultOnline = "assets/images/cosult_online.png";
 const String pharmacy = "assets/images/pharmacy.png";
 const String labSvg = "assets/images/lab.svg";
+const String successicon = "assets/images/suuccees_icon.svg";
 

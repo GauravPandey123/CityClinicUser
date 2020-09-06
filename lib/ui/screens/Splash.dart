@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:city_clinic_user/ui/screens/Signup.dart';
+import 'package:city_clinic_user/ui/screens/Splash2.dart';
 import 'package:city_clinic_user/utils/AppImages.dart';
 import 'package:city_clinic_user/utils/Constants.dart';
 import 'package:city_clinic_user/utils/appcolors.dart';
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                SignUp()
+                    Splash2()
             )
         )
     );
