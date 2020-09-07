@@ -25,5 +25,10 @@ const String labtest = "assets/images/labtest.png";
 const String consultOnline = "assets/images/cosult_online.png";
 const String pharmacy = "assets/images/pharmacy.png";
 const String labSvg = "assets/images/lab.svg";
-const String successicon = "assets/images/suuccees_icon.svg";
+const String successIcon = "assets/images/suuccees_icon.svg";
+const String drawerClose = "assets/images/drawer_close.svg";
+const String morningImage = "assets/images/morning.svg";
+const String afternoon = "assets/images/afternoon.svg";
+const String moonImage = "assets/images/moon.svg";
+
 
